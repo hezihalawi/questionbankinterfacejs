@@ -1,0 +1,274 @@
+/* כל העיצוב ב-CSS */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.main-content {
+    flex: 80%;
+    margin-left: auto; /* דוחף את ה-main-content שמאלה */
+    margin-right: 200px; /* מוודא שהתוכן לא נדחף מעבר לנווט */
+    background-color: lightblue;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    flex-grow: 1; /* שהתוכן יתפוס את כל השטח הנותר */
+}
+.startpage {
+            display: flex;
+            flex-direction: column;
+                        align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            gap: 10px;
+        }
+        .inputlogin {
+            width: 40ch;
+            height: 50px;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s;
+            direction: "rtl";
+            text-align: left;
+            }
+
+.loginbutton {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    width: 40ch;
+
+}
+
+.loginbutton button:hover {
+    background-color: #f1f1f1;
+}
+
+
+        /* Header and Navigation Bar */
+header {
+    background: #333;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px; /* רוחב הסרגל ניווט */
+    height: 100%; /* הסרגל יתפוס את כל הגובה */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* שים את כל הכפתורים בתחילת הסרגל */
+    padding: 5px;
+}
+
+/* כותרת הסרגל ניווט */
+header h2 {
+    color: #fff; /* צבע טקסט לבן */
+    text-align: center; /* למרכז את הכותרת */
+    font-size: 20px; /* גודל טקסט לכותרת */
+    margin-bottom: 20px; /* מרווח מתחת לכותרת */
+}
+
+/* התפריט יהפוך ל-Flexbox עם סידור אופקי, ויתפשט לשורות אוטומטיות */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* הכפתורים יתפשטו לשורות אוטומטית */
+    justify-content: flex-start; /* סידור הכפתורים מימין לשמאל */
+    align-items: flex-start; /* שורה ראשונה ממוקמת למעלה */
+    margin: 0;
+    padding-top: 30px; /* הוספנו מרווח מהחלק העליון של הסרגל */
+    direction: rtl; /* סידור הכפתורים מימין לשמאל */
+}
+
+nav ul li {
+    margin: 5px 10px; /* מרווחים בין הכפתורים */
+    white-space: nowrap; /* מונע חיתוך טקסט בכפתורים */
+}
+
+nav ul li a {
+    color: #333; /* צבע הטקסט בכפתור */
+    text-decoration: none;
+    font-size: 16px; /* גודל טקסט קטן יותר */
+    padding: 8px 10px; /* padding קטן יותר */
+    display: block;
+    border: 2px solid #333; /* גבול מסביב לכפתור */
+    border-radius: 5px; /* פינות מעוגלות לכפתור */
+    background-color: #fff; /* צבע הרקע של הכפתור */
+    transition: all 0.3s ease; /* אפקט מעבר כשהכפתור עובר */
+    width: 40px; /* כפתור קטן בגודל 40px */
+    text-align: center; /* למרכז את המספר בתוך הכפתור */
+}
+
+nav ul li a.disabled {
+    background-color: #ccc; /* צבע רקע אפור */
+    color: #777; /* צבע טקסט כהה */
+    border-color: #999; /* צבע גבול בהיר */
+    cursor: not-allowed; /* מראה של סמן לא זמין */
+    pointer-events: none; /* מונע לחיצה */
+}
+
+
+/* אפקט כאשר העכבר על הכפתור */
+nav ul li a:hover {
+    background-color: #f1f1f1; /* שינוי צבע הרקע בעת ריחוף */
+    border-color: #555; /* שינוי גבול הכפתור בעת ריחוף */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* הצללה חזקה יותר בעת ריחוף */
+}
+
+/* כפתור הגש בתחתית הסרגל */
+nav ul li.submit-button {
+    position: fixed;
+    bottom: 20px; /* מוודא שהכפתור נמצא ממש מתחת לסרגל */
+    right: 60px;
+    background-color: #f4f4f4; /* רקע קל כדי לבדל אותו */
+    padding: 1px 0;
+
+
+}
+
+nav ul li.submit-button a {
+    padding: 0px 0px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* כפתור הצגת הסרגל ניווט */
+#toggle-nav button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+#toggle-nav button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+      -ms-flex: 80%; /* IE10 */
+  flex: 80%;
+}
+
+#home, #about, #services, #contact,#submit {
+    display: none; /* נסתיר את כל המקטעים */
+    width: 100%; /* להבטיח שהמקטע יתפוס את כל הרוחב */
+    height: 100vh; /* כל מקטע יתפוס את כל גובה המסך */
+    padding: 60px 20px;
+    -ms-flex: 80%; /* IE10 */
+    flex: 80%;
+    background-color: lightblue;
+    padding: 20px;
+}
+
+/* טופס בתוך ה- section */
+#submit form {
+    margin-top: 20px;
+    text-align: right; /* למרכז את כל הטופס מימין לשמאל */
+}
+
+#submit input[type="text"], #submit input[type="email"], #submit textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.main-content {
+    /* flex: 80%; /* ייקח 80% מהרוחב */
+    background-color: lightblue; /* צבע רקע */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto; /* גלילה במקרה שהתוכן גדול */
+    overflow-x: hidden;
+
+
+}
+#submit input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit input[type="submit"]:hover {
+    background-color: #555;
+}
+.nav-below {
+    text-align: center;
+    position: fixed;
+    bottom: 20px; /* מוודא שהכפתור נמצא ממש מתחת לסרגל */
+    right: 35px;
+    background-color: #f4f4f4; /* רקע קל כדי לבדל אותו */
+    padding: 2px 0;
+}
+#extraButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#extraButton:hover {
+    background-color: #218838;
+}
+
+
+.main-nav {
+    background-color: #333; /* רקע כהה */
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    gap: 10px;
+    justify-content: flex-start; /* מיקום לימין */
+    width: 100%; /* פריסה לרוחב כל השורה */
+    /* position: relative; */
+    right: -20px;
+}
+
+.main-nav button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+}
+
+.main-nav button:hover {
+    background-color: #0056b3;
+}
